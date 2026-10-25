@@ -72,6 +72,17 @@ test              48603
 split_idx = dataset_ogb.get_idx_split()
 x_train = data.x[split_idx['train']]
 
+# Twitch-E (DE)
+1.组织结构 ：手动构造，raw 下三个文件（features.json / edges.csv / target.csv）
+2.是否划分 ：未划分
+标签表列为 ['id', 'days', 'mature', 'views', 'partner', 'new_id']， 没有任何 train/val/test 或 mask 列 
+3.规模 ：节点 9498 / 边 153138 / 特征 25 维
+
+# Elliptic
+1.组织结构 ：手动构造，三个 CSV（特征含时间步 / 边 / 类别）
+2.是否划分 ：按时间步切分
+3.实测规模 ：节点 203769 / 边 234355 / 特征 165 维 / 时间步 1~49 共 49 个
+4.标签分布 ：unknown: 157205，2（合法）: 42019，1（非法）: 4545
 
 # 运行
 运行主程序：python main.py
